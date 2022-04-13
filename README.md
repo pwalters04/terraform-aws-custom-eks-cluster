@@ -1,1 +1,1 @@
-# terraform-kubernetes-app
+# Terraform Kubernetes Simple Application Deployment
