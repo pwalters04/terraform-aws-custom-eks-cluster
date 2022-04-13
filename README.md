@@ -1,6 +1,6 @@
 # Terraform AWS Custom EKS Module
-
-## Examples
+Basic Custom EKS Module
+## Example
 
 ```hcl
 locals {
