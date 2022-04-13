@@ -1,11 +1,19 @@
-locals{
- status = kubernetes_service.app.status
+output "cluster_name" {
+  value = aws_eks_cluster.cluster.name
+  description = "EKS Cluster Name"
 }
 
-output "service_endpoint" {
-  value = try(
-            "https://${local.status[0]["load_balancer"][0]["ingress"][0]["hostname"]}",
-            "(error parsing hostname from status)"
-  )
-  description = " K8S Service endpoint"
+output "cluster_arn" {
+  value = aws_eks_cluster.cluster.arn
+  description = "EKS Cluster's ARN"
+}
+
+output "cluster_endpoint" {
+  value = aws_eks_cluster.cluster.endpoint
+  description = "EKS Cluster's Endpoint"
+}
+
+output "cluster_cert_auth" {
+  value = aws_eks_cluster.cluster.certificate_authority
+  description = "EKS Cert Authority"
 }

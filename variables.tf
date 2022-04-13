@@ -1,25 +1,29 @@
+variable "region" {
+  description = "AWS Regions"
+  type = string
+}
+
 variable "name" {
-  description = "Name For Resources"
+  description = "EKS Cluster Name"
   type = string
 }
 
-variable "image" {
-  description = "Docker Image"
-  type = string
-}
-
-variable "container_port" {
-  description = "Docker Image Listening Port"
+variable "min_size" {
+  description = "Minimum Number Of Nodes"
   type = number
 }
 
-variable "replicas" {
-  description = "Number Of Repolics"
-  type= number
+variable "max_size" {
+  description = "Maximum Number Of Nodes"
+  type = number
 }
 
-variable "env_vars" {
-  description = "Environment Variables For The App"
-  type = map(string)
-  default = {}
+variable "desired_size" {
+  description = "Desired Number Of Nodes"
+  type = number
+}
+
+variable "instance_type" {
+  description = "EC2 Instance Type Of The Node Group"
+  type = list(string)
 }
